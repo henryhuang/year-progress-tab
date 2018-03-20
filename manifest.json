@@ -1,0 +1,15 @@
+{
+  "name": "Year Progress Tab",
+  "author": "Henry Huang",
+  "description": "Override the new tab page with year progress.",
+  "version": "0.0.1",
+  "incognito": "split",
+  "chrome_url_overrides": {
+    "newtab": "page.html"
+  },
+  "icons": {
+
+  },
+  "manifest_version": 2,
+  "homepage_url": "https://huangyijie.com"
+}
