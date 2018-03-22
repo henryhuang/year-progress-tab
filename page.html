@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>New Tab</title>
+    <style media="screen">
+      html, body {
+        height: 100%;
+      }
+      body {
+        background: #ffffff url(bg.jpg) no-repeat center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        overflow: hidden;
+      }
+      main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        overflow: hidden;
+      }
+      .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+      .container:not(:nth-of-type(2)) {
+        border-top: 1px solid;
+      }
+      .content {
+        max-width: 50%;
+        min-width: 300px;
+        padding: 2rem;
+        background-color:rgba(255, 255, 255, 0.8);
+      }
+      .label {
+        font-size: 30px;
+        text-align: left;
+        width: 50%;
+      }
+      .value {
+        margin-left: 2rem;
+        font-size: 30px;
+        text-align: right;
+        width: 50%;
+      }
+      .footer {
+        margin-top: 10px;
+        text-align: right;
+      }
+      .footer a {
+        text-decoration: none;
+        color: rgb(65, 105, 225, 0.8);
+      }
+    </style>
+  </head>
+  <body>
+
+    <main>
+
+      <div class="content">
+
+        <div class="header">
+          <h1>
+            Progress
+          </h1>
+        </div>
+
+        <div class="container">
+          <div class="label">
+            Year
+          </div>
+          <div id="yearValue" class="value">
+
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="label">
+            Quarter
+          </div>
+          <div id="quarterValue" class="value">
+
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="label">
+            Month
+          </div>
+          <div id="monthValue" class="value">
+
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="label" id="dayLabel">
+            Day
+          </div>
+          <div id="dayValue" class="value">
+
+          </div>
+        </div>
+        <div class="footer">
+          Made by <a href="https://huangyijie.com">Henry Huang</a>
+          <br>
+          <a href="https://github.com/henryhuang/year-progress-tab">Source code</a>
+        </div>
+      </div>
+    </main>
+
+  </body>
+  <script src="./lib/moment.js"></script>
+  <script src="./script.js"></script>
+</html>
