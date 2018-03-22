@@ -28,11 +28,13 @@
         justify-content: center;
         align-items: center;
       }
+      .container:not(:nth-of-type(2)) {
+        border-top: 1px solid;
+      }
       .content {
         max-width: 50%;
+        min-width: 300px;
         padding: 2rem;
-        /* border: 1px solid;
-        border-style: dashed; */
         background-color:rgba(255, 255, 255, 0.8);
       }
       .label {
@@ -46,6 +48,14 @@
         text-align: right;
         width: 50%;
       }
+      .footer {
+        margin-top: 10px;
+        text-align: right;
+      }
+      .footer a {
+        text-decoration: none;
+        color: rgb(65, 105, 225, 0.8);
+      }
     </style>
   </head>
   <body>
@@ -53,6 +63,13 @@
     <main>
 
       <div class="content">
+
+        <div class="header">
+          <h1>
+            Progress
+          </h1>
+        </div>
+
         <div class="container">
           <div class="label">
             Year
@@ -81,14 +98,18 @@
         </div>
 
         <div class="container">
-          <div class="label">
+          <div class="label" id="dayLabel">
             Day
           </div>
           <div id="dayValue" class="value">
 
           </div>
         </div>
-
+        <div class="footer">
+          Made by <a href="https://huangyijie.com">Henry Huang</a>
+          <br>
+          <a href="https://github.com/henryhuang/year-progress-tab">Source code</a>
+        </div>
       </div>
     </main>
 
