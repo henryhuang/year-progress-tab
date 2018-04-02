@@ -1,3 +1,7 @@
+var calPercentage = function(a, b) {
+    return `${parseInt((a / b).toFixed(2) * 100)}%`;
+}
+
 var calculateDay = function(date) {
 
     var hour = date.getHours();
@@ -6,7 +10,7 @@ var calculateDay = function(date) {
     var calValue = function(date, totalValue, minuend) {
         const passedMinutes = (date.getHours() - minuend) * 60 + date.getMinutes();
         const totoalMinutes = totalValue * 60;
-        return `${parseInt((passedMinutes / totoalMinutes).toFixed(2) * 100)}%`;
+        return calPercentage(passedMinutes, totoalMinutes);
     };
 
     if (6 <= hour && hour < 12) {
@@ -46,7 +50,7 @@ var calculate = function() {
     var lastDateOfYear = moment([year + 1, 0, 1]);
     var dayOfYear = moment(date).dayOfYear();
     var dayCountOfYear = lastDateOfYear.diff(firstDateOfYear, 'days');
-    var yearProgress = `${(parseFloat(dayOfYear / dayCountOfYear).toFixed(2)) * 100}%`;
+    var yearProgress = calPercentage(dayOfYear, dayCountOfYear);
     var daysOfQuaters = [{
             count: dayCountOfYear === 365 ? 90 : 91,
             firstDateMoment: moment([year, 0, 1])
@@ -66,9 +70,9 @@ var calculate = function() {
     ];
     var dq = daysOfQuaters[moment(date).quarter() - 1];
     var daysRemOfQuarter = moment(date).diff(dq.firstDateMoment, 'days');
-    var quarterProgress = `${(parseFloat(daysRemOfQuarter / dq.count).toFixed(2)) * 100}%`;
+    var quarterProgress = calPercentage(daysRemOfQuarter, dq.count);
     var daysInMonth = moment(date).daysInMonth();
-    var monthProgress = `${(parseFloat((daysInMonth - moment().endOf('month').diff(moment(date), 'days')) / daysInMonth).toFixed(2)) * 100}%`;
+    var monthProgress = calPercentage((daysInMonth - moment().endOf('month').diff(moment(date), 'days')), daysInMonth);
 
     var dayProgress = calculateDay(date);
 

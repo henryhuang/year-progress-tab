@@ -2,7 +2,7 @@
     "name": "Year Progress Tab",
     "author": "Henry Huang",
     "description": "Display year/quarter/month/day progress in New Tab.",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "incognito": "split",
     "chrome_url_overrides": {
         "newtab": "page.html"
